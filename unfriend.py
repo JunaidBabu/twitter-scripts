@@ -23,19 +23,22 @@ if __name__ == '__main__':
   print 'Thank you for using my unfriend script. - iepathos'
   start = time.time()
   i = 0
-  friends = api.friends()
   me = api.me()
+  friends = api.friends_ids(me)
+  following = api.followers_ids(me)
+  unfriends = following
+  for friend in friends:
+    unfriends.remove(friend)
 
   try:
-    for friend in friends:
-      if api.exists_friendship(friend.id, me.id):
-        api.destroy_friendship(friend.id)
-        print 'Unfollowed %s' % (friend.name)
-        i += 1
+    for friend in unfriends:
+      api.destroy_friendship(friend.id)
+      print 'Unfollowed %s' % friend
+      i += 1
 
-        if i % 5 == 0:
-          print 'Waiting 60 seconds between next unfollow every 5 unfollows \nbecause Twitter doesn\'t like spammers. Clients allowed only 350 requests every hour. \nSo, about 5.83 unfollows a minute.'
-          time.sleep(60)
+      if i % 5 == 0:
+        print 'Waiting 60 seconds between next unfollow every 5 unfollows \nbecause Twitter doesn\'t like spammers. Clients allowed only 350 requests every hour. \nSo, about 5.83 unfollows a minute.'
+        time.sleep(60)
   except ValueError:
     print 'Twitter is unhappy with us.'
 
