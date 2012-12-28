@@ -33,8 +33,8 @@ if __name__ == '__main__':
         print 'Unfollowed %s' % (friend.name)
         i += 1
 
-        if i % 8 == 0:
-          print 'Waiting 60 seconds between next unfollow every 8 unfollows \nbecause Twitter doesn\'t like spammers. Clients allowed only 350 requests every hour.'
+        if i % 5 == 0:
+          print 'Waiting 60 seconds between next unfollow every 5 unfollows \nbecause Twitter doesn\'t like spammers. Clients allowed only 350 requests every hour. \nSo, about 5.83 unfollows a minute.'
           time.sleep(60)
   except ValueError:
     print 'Twitter is unhappy with us.'
