@@ -37,7 +37,7 @@ if __name__ == '__main__':
       i += 1
 
       if i % 5 == 0:
-        print 'Waiting 60 seconds between next unfollow every 5 unfollows \nbecause Twitter doesn\'t like spammers. Clients allowed only 350 requests every hour. \nSo, about 5.83 unfollows a minute.'
+        print 'Waiting 60 seconds between next unfollow every 5 unfollows \nbecause Twitter doesn\'t like spammers. Clients allowed only \n350 requests every hour. So, about 5.83 unfollows a minute.'
         time.sleep(60)
   except ValueError:
     print 'Twitter is unhappy with us.'
