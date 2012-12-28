@@ -24,9 +24,8 @@ if __name__ == '__main__':
   start = time.time()
   i = 0
   me = api.me()
-  followed = api.friends_ids(me)
   followers = api.followers_ids()
-  nonfriends = followed
+  nonfriends = api.friends_ids(me)
   for friend in followers:
     if friend in nonfriends:
       nonfriends.remove(friend)
