@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# This script will unfriend everyone on a Twitter account.
-# Use this script to unfollow all of the people who aren't
-# following you.
-
+# This script will unfollow everyone on a Twitter account
+# who isn't following you back.
+#
 # Written by Glen Baker - iepathos@gmail.com
 
 import tweepy
